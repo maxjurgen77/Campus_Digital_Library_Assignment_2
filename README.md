@@ -1,60 +1,48 @@
-# Campus Digital Library System — Assignment Two
-
-## Requirements
-- Python 3.10 or newer
-- Tkinter (usually included with Python on Windows)
-- Visual Studio Code
-
-## Run the program
-1. Extract this ZIP file to a folder.
-2. Open the folder in Visual Studio Code.
-3. Open `main.py`.
-4. Select **Terminal → New Terminal**.
-5. Run:
-
-   ```bash
-   python main.py
-   ```
-
-   If `python` is not recognized on Windows, try:
-
-   ```bash
-   py main.py
-   ```
-
-## How to use
-1. Add a Physical Book or E-Book using the form at the top.
-2. Register a patron with a unique ID.
-3. Select an item and use Borrow or Return. Enter the registered patron ID.
-4. Search titles, show all items, sort by title, or view item details.
-5. Use File → Save data / Load data. Data is saved in the `data` folder as `books.json` and `patrons.json`.
-6. The application attempts to save data when it closes.
-
-## Assignment Two requirement mapping
-- **Updated problem statement:** The original Campus Digital Library System is extended with persistent storage, exception handling and a GUI.
-- **Polymorphism variant 1 — overriding:** `PhysicalBook.display_access_info()` and `EBook.display_access_info()` implement the abstract method differently.
-- **Polymorphism variant 2 — operator overloading:** `LibraryItem.__str__()` customises the string representation; `LibraryItem.__lt__()` allows items to be sorted by title.
-- **Polymorphism variant 3 — duck typing:** `LibraryBranch.process_item()` calls `get_details()` and `display_access_info()` through the common interface rather than branching on the item's concrete class.
-- **Exception handling:** custom library exceptions and `try/except` blocks handle duplicate IDs, invalid data, missing records, unavailable items and file problems.
-- **File writing:** `save_to_files()` writes books and patrons to JSON.
-- **File reading:** `load_from_files()` reads JSON and recreates objects.
-- **ADT:** Python lists store inventory, patrons, borrowed item IDs and chapters.
-- **GUI:** Tkinter provides a menu bar, forms, buttons, dialogs and a table.
-- **Original concepts:** inheritance (`PhysicalBook` and `EBook` inherit `LibraryItem`), composition (`PhysicalBook` owns `TableOfContents`), aggregation (`LibraryBranch` holds lists of items and patrons), searching and object type checking are retained.
-
-## Testing checklist
-- [ ] Add a valid physical book.
-- [ ] Add a valid e-book.
-- [ ] Attempt to add an item with an existing ID; confirm an error message.
-- [ ] Register a patron.
-- [ ] Attempt to register a duplicate patron ID; confirm an error message.
-- [ ] Borrow an available item.
-- [ ] Try to borrow that item again; confirm it is rejected.
-- [ ] Return the item using the same patron ID.
-- [ ] Search for a title.
-- [ ] Sort items by title.
-- [ ] Save data, close the application, reopen it, and confirm the data remains.
-- [ ] View details for both a physical book and an e-book.
-
-## Data and limitations
-The application stores data locally in JSON files. It is a coursework demonstration, not a multi-user production library database. Keep the `data` folder with the program so saved records remain available.
+ UNIVERSITY OF NAMIBIA
+OOP Assignment Two
+Updated Problem Statement
+Group Members
+1. Hamukoto Max JF :Student Number: 224164139
+2. David Ali MT : Student Number: 224092677
+3. Erastus Ndapewa O : Student Number: 222080833
+1. Background
+The Campus Digital Library System is designed to help a campus library manage its learning
+resources and registered patrons. Managing book records, tracking borrowing and returns,
+and finding available items manually can take time and may lead to inaccurate records. The
+system provides a computer-based way to perform these common library tasks.
+2. Problem Statement
+A campus library needs a reliable and convenient way to maintain information about physical
+books, electronic books, and library patrons. Without a central system, staff may experience
+difficulties registering resources and patrons, checking whether an item is available,
+recording loans and returns, and locating books by title. Records may also be lost when
+information is not saved properly.
+The Campus Digital Library System will address these problems through an object-oriented
+application with a graphical user interface. The application will allow users to add and search
+for library items, register patrons, borrow and return items, and save or load library records.
+3. Aim
+The aim of the project is to develop an object-oriented Campus Digital Library System that
+makes basic library record management more organised, accessible, and reliable.
+4. Objectives
+The objectives of the system are to:
+1. Create and manage records for physical books, electronic books, and patrons.
+2.
+Allow users to search for library items and check their availability.
+3.
+Record borrowing and returning transactions while preventing invalid operations.
+4.
+Provide a graphical user interface with menus, buttons, and suitable input components.
+5.
+Apply at least three forms of polymorphism, including method overriding, operator overloading, and duck typing.
+6.
+Use exception handling to respond appropriately to errors such as missing items, duplicate identifiers, and unavailable items.
+7.
+Use a data structure, such as a list, to store and manage collections of library items and patrons.
+8.
+Save records to files and load previously saved records so information can be retained between sessions.
+5. Scope of the System
+The system covers basic library operations, including adding and displaying items, registering patrons, searching titles, borrowing and returning items, and saving or loading records. It distinguishes between physical books and electronic books so that each type can provide its relevant access information.
+The application is intended for a local demonstration and does not claim to provide online access, user authentication, or a live multi-branch database.
+6. Expected Outcome
+The expected outcome is a working desktop application that demonstrates object-oriented programming concepts and provides a straightforward interface for managing basic library activities. The application should handle common errors, maintain records through file operations, and allow users to complete the main tasks without manually editing the data files.
+7. Conclusion
+The updated Campus Digital Library System extends the original idea by including a graphical interface, file persistence, structured data management, exception handling, and multiple forms of polymorphism. These features are intended to make the application more practical while demonstrating the programming concepts required for Assignment Two.
